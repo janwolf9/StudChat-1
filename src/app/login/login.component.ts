@@ -69,6 +69,11 @@ export class LoginComponent implements OnInit, OnDestroy {
         this.progressBarDone(true);
         this.submitting = false;
 
+        localStorage.setItem('user.id', data.data.id);
+        localStorage.setItem('user.username', data.data.username);
+        localStorage.setItem('user.email', data.data.email);
+        localStorage.setItem('user.created', data.data.created);
+
         this.router.navigate(['/profile']);
       },
       (error) => {

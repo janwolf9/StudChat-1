@@ -1,3 +1,6 @@
-<p>
-  profile works!
-</p>
+<ul>
+  <li>ID: {{ user?.id }}</li>
+  <li>Username: {{ user?.username }}</li>
+  <li>Email: {{ user?.email }}</li>
+  <li>Created: {{ user?.created | date }}</li>
+</ul>

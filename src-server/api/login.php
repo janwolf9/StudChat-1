@@ -1,5 +1,5 @@
 <?php
-// header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 
 include_once $_SERVER['DOCUMENT_ROOT'] . '/api/__config/database.php';
@@ -7,6 +7,8 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/api/__objects/user.php';
 include_once $_SERVER['DOCUMENT_ROOT'] . '/api/__shared/utilities.php';
 
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
+  $_POST = json_decode(file_get_contents('php://input'), true);
+
   $username = validOrThrow($_POST['username'], "'username' isn't set");
   $password = validOrThrow($_POST['password'], "'password' isn't set");
 
@@ -23,8 +25,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     printJSONError("Password doesn't match", 401);
   }
 
+  session_start();
+  $_SESSION['user'] = $user;
+
   // Print data logged in successfully
-  printJSONData($user -> toSafe());
+  printJSONData($user->toSafe());
 } else {
   printJSON(array("error" => "Bad request"), 405);
 }

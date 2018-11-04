@@ -20,7 +20,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
   }
 
   $user = User::withUsername($db, $username);
-  printJSONData($user -> toSafe());
+
+  session_start();
+  $_SESSION['user'] = $user;
+
+  printJSONData($user->toSafe());
 } else {
   printJSON(array("error" => "Bad request"), 405);
 }
