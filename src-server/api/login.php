@@ -15,7 +15,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
   $db = $database->getConnection();
 
   // Get user in database
-  $user = User::getByUsername($db, $username);
+  $user = User::withUsername($db, $username);
   validOrThrow($user, "User doesn't exist", 404);
 
   // Is password valid

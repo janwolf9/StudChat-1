@@ -19,7 +19,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     printJSONError("Username is already taken", 409);
   }
 
-  $user = User::getByUsername($db, $username);
+  $user = User::withUsername($db, $username);
   printJSONData($user -> toSafe());
 } else {
   printJSON(array("error" => "Bad request"), 405);
