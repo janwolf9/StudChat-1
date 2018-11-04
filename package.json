@@ -5,7 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
 
-    "start-server": "cd src-server && php -S localhost:4201",
+    "start-server": "cd src-server && php -S 0.0.0.0:4201",
 
     "build": "ng build",
     "test": "ng test",
