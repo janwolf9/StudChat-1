@@ -1,0 +1,34 @@
+@import "@material/linear-progress/mixins";
+
+form {
+  margin: 20px;
+}
+
+.progressbar {
+  width: 300px;
+  margin: auto;
+
+  &.error {
+    @include mdc-linear-progress-bar-color(red);
+  }
+  &.success {
+    @include mdc-linear-progress-bar-color(green);
+  }
+}
+
+.username, .password{
+  display: block;
+  width: 300px;
+  margin: 20px auto;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  width: 300px;
+  margin: auto;
+}
+
+.button-container button {
+  margin: 3px;
+}

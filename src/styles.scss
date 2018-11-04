@@ -1,6 +1,14 @@
+// $mdc-theme-primary: #fcb8ab;
+// $mdc-theme-secondary: #feeae6;
+// $mdc-theme-on-primary: #442b2d;
+// $mdc-theme-on-secondary: #442b2d;
 
 // Material design imports
-@import 'node_modules/@material/theme/mdc-theme';
+@import '@material/theme/mdc-theme';
+@import '@material/textfield/mdc-text-field';
+@import '@material/floating-label/mdc-floating-label';
+@import '@material/button/mdc-button';
+@import '@material/linear-progress/mdc-linear-progress';
 
 
 // Global styles
