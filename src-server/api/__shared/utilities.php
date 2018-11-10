@@ -10,8 +10,6 @@ function printJSONError($out, $error_code = 400) {
 function printJSONData($out, $error_code = 200) {
   printJSON(array("data" => $out), $error_code);
 }
-
-
 function validOrThrow($val, $out, $error_code = 400) {
   if(!isset($val) || empty($val)){
     printJSONError($out);
